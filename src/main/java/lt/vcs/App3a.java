@@ -1,9 +1,8 @@
 package lt.vcs;
 
-import java.util.Scanner;
-
-public class App {
+public class App3a {
 
     public static void main(String[] args) {
+        // new code
     }
 }
