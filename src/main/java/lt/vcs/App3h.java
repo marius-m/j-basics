@@ -1,6 +1,6 @@
 package lt.vcs;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * 3h. Suskaičiuoti kiek yra masyve kiekvieno elemento pasikartojimų
@@ -8,15 +8,12 @@ import java.util.Arrays;
  */
 public class App3h {
 
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         int[] array1 = { 0, 2, 2, 3, 2, 4, 4, 20 };
 
-        int maxNumber = 0;
-        for (int i = 0; i < array1.length; i++) {
-            if (maxNumber < array1[i]) {
-                maxNumber = array1[i];
-            }
-        }
+        int maxNumber = maxNumber(array1);
 
         int[] count = new int[maxNumber + 1];
         for (int i = 1; i < array1.length; i++) {
@@ -33,4 +30,15 @@ public class App3h {
             System.out.println("Number " + number + " has occured " + numberCount + " times.");
         }
     }
+
+    public static int maxNumber(int[] anyArray) {
+        int maxNumber = 0;
+        for (int i = 0; i < anyArray.length; i++) {
+            if (maxNumber < anyArray[i]) {
+                maxNumber = anyArray[i];
+            }
+        }
+        return maxNumber;
+    }
+
 }
