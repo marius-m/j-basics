@@ -9,9 +9,9 @@ public class App5b {
 
     public static void main(String[] args) {
 //        KMI = masė (kg) / (ūgis(m))^2
-        double myKmi = countKmi(100, 188);
-        double myKmi1 = countKmi(80, 190);
-        double myKmi2 = countKmi(75, 170);
+        double myKmi = countKmi(100, 1.88);
+        double myKmi1 = countKmi(80, 1.90);
+        double myKmi2 = countKmi(75, 1.70);
         System.out.println("My kmi: " + myKmi);
     }
 
