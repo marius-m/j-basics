@@ -24,20 +24,21 @@ public class AppATM {
 
     public static String validUsername = "Jonas";
     public static String validPin = "1234";
+    public static double currentBalance = 1000.333333;
 
     public static void main(String[] args) {
         do {
             System.out.println(" Please enter username");
-//            String username = scanner.nextLine();
-            String username = "Jonas"; // todo: test data
+            String username = scanner.nextLine();
+//            String username = "Jonas"; // todo: test data
             System.out.println(" Please enter pin number");
-//            String enteredPin = scanner.nextLine();
-            String enteredPin = "1234"; // todo: test data
+            String enteredPin = scanner.nextLine();
+//            String enteredPin = "1234"; // todo: test data
 
             if (username.equals(validUsername) && enteredPin.equals(validPin)) {
                 System.out.println("Logged in");
                 int menuSelection = 0;
-                while (true) {
+                while (menuSelection != 4) {
                     menuSelection = doMenu();
                     switch (menuSelection) {
                         case 1: {
@@ -74,21 +75,32 @@ public class AppATM {
             System.out.println("  3. Add money");
             System.out.println("  4. Logout");
             menuSelect = scanner.nextInt();
-        } while(menuSelect == 4);
+        } while(menuSelect != 4);
         return menuSelect;
     }
 
     public static void doBalance() {
-        // TODO: Incomplete code
-        System.out.println("You have 100000000$");
-    }
-
-    public static void removeMoney() {
-        // TODO : Incomplete code
+        String displayBalance = String.format("%.2f", currentBalance);
+        System.out.println(" You have " + displayBalance);
     }
 
     public static void addMoney() {
-        // TODO: Incomplete code
+        System.out.println(" Please enter amount how much to add");
+        int amountToBeAdded = scanner.nextInt();
+        currentBalance = currentBalance + amountToBeAdded;
+        doBalance();
+    }
+
+    public static void removeMoney() {
+        System.out.println(" Please enter amount how much to remove");
+        int amountToBeRemoved = scanner.nextInt();
+        if (amountToBeRemoved > currentBalance) {
+            System.out.println(" Your amount is too big to be removed");
+            doBalance();
+        } else {
+            currentBalance -= amountToBeRemoved;
+            doBalance();
+        }
     }
 
     public static void logout() {
