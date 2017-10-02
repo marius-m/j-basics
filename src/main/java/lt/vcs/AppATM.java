@@ -53,10 +53,6 @@ public class AppATM {
                             addMoney();
                             break;
                         }
-                        case 4: {
-                            logout();
-                            break;
-                        }
                     }
                 }
             } else {
@@ -101,10 +97,6 @@ public class AppATM {
             currentBalance -= amountToBeRemoved;
             doBalance();
         }
-    }
-
-    public static void logout() {
-        // TODO: Incomplete code
     }
 
 }
