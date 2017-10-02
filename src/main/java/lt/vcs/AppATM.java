@@ -75,7 +75,7 @@ public class AppATM {
             System.out.println("  3. Add money");
             System.out.println("  4. Logout");
             menuSelect = scanner.nextInt();
-        } while(menuSelect != 4);
+        } while(menuSelect < 1 || menuSelect > 4);
         return menuSelect;
     }
 
