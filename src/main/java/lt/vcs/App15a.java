@@ -14,6 +14,6 @@ public class App15a {
 
     public static void main(String[] args) {
         Words myWords1 = new Words();
-        System.out.println(myWords1.joiner(words));
+        System.out.println(myWords1.joiner("", words));
     }
 }

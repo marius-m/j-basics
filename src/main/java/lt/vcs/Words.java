@@ -2,12 +2,15 @@ package lt.vcs;
 
 public class Words {
 
-    public String joiner(String[] words) {
+    public String joiner(String startsWith, String[] words) {
         String allWords = "";
         for (int i = 0; i < words.length; i++) {
-            allWords += words[i];
+            if (words[i].startsWith(startsWith)) {
+                allWords += words[i];
+            }
         }
         return allWords;
     }
 
 }
+
