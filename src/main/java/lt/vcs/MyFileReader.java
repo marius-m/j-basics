@@ -16,9 +16,9 @@ public class MyFileReader {
             while (line != null) {
                 if (line.length() > 0) {
                     lotsOfLines[i] = line;
+                    i++;
                 }
                 line = br.readLine();
-                i++;
             }
         } catch (IOException e) {
             e.printStackTrace();
