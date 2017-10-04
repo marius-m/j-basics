@@ -23,6 +23,5 @@ public class App16a {
         } else {
             System.out.println("Our word does not have '" + wordToBeChecked + "' in it");
         }
-
     }
 }
