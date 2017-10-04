@@ -2,7 +2,11 @@ package lt.vcs;
 
 public class WordUtility {
 
-    public int numberOfExecutions = 0;
+    private int numberOfExecutions;
+
+    public int getNumberOfExecutions() {
+        return numberOfExecutions;
+    }
 
     public boolean isWordInside(String word, String wordToBeChecked) {
         numberOfExecutions ++;
