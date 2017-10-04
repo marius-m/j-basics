@@ -14,12 +14,14 @@ public class App16a {
         WordUtility wordUtility = new WordUtility();
         System.out.println("Please enter word:");
         String inputWord = scanner.nextLine();
+        System.out.println("Please enter word to be checked");
+        String wordToBeChecked = scanner.nextLine();
 
-        boolean isLabasInside = wordUtility.isLabasInside(inputWord);
-        if (isLabasInside) {
-            System.out.println("Our word has 'labas' in it");
+        boolean isWordInside = wordUtility.isWordInside(inputWord, wordToBeChecked);
+        if (isWordInside) {
+            System.out.println("Our word has '" + wordToBeChecked + "' in it");
         } else {
-            System.out.println("Our word does not have 'labas' in it");
+            System.out.println("Our word does not have '" + wordToBeChecked + "' in it");
         }
 
     }
