@@ -1,7 +1,9 @@
 package lt.vcs;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * 17a. Tekstiniame faile į kiekvieną eilutę yra surašyti du skaičiai,
@@ -16,8 +18,14 @@ public class App17a {
         MyFileReader reader = new MyFileReader();
         ArrayList<String> lines = reader.read();
 
+        ArrayList<Gas> gases = new ArrayList<Gas>();
         for (int i = 0; i < lines.size(); i++) {
-            System.out.println("Line: " + lines.get(i));
+            String line = lines.get(i);
+            String[] splitLine = line.split(" - ");
+            Gas gas1 = new Gas(splitLine[0], splitLine[1]);
+            gases.add(gas1);
         }
+
+        System.out.println("ArrayList: " + gases);
     }
 }
