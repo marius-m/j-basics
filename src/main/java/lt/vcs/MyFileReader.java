@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 public class MyFileReader {
 
-    public ArrayList<String> read() throws IOException {
+    public ArrayList<String> read(String fileName) throws IOException {
         ArrayList<String> lines = new ArrayList();
-        BufferedReader br = new BufferedReader(new FileReader("names.txt"));
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
         try {
             String line = br.readLine();
             while (line != null) {

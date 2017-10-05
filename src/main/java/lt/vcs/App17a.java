@@ -16,7 +16,7 @@ public class App17a {
 
     public static void main(String[] args) throws IOException {
         MyFileReader reader = new MyFileReader();
-        ArrayList<String> lines = reader.read();
+        ArrayList<String> lines = reader.read("names.txt");
 
         ArrayList<Gas> gases = new ArrayList<Gas>();
         for (int i = 0; i < lines.size(); i++) {
