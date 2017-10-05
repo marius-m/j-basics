@@ -26,11 +26,18 @@ public class App13a {
             if (line.contains("-")) {
                 line = line.replaceAll(" ", "");
                 String[] lineSplit = line.split("-");
-                String name = lineSplit[0];
-                int age = Integer.parseInt(lineSplit[1]);
-                nameMap.put(name, age);
+                if (lineSplit.length > 0) {
+                    String name = lineSplit[0];
+                    if (!name.equals("")) {
+                        int age = Integer.parseInt(lineSplit[1]);
+                        nameMap.put(name, age);
+                    }
+                }
             }
         }
+
+        System.out.println("My map: " + nameMap);
+
         while (true) {
             System.out.println("Please enter name");
             String inputName = scanner.nextLine();
