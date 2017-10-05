@@ -4,19 +4,18 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MyFileReader {
 
-    public String[] read() throws IOException {
-        String[] lotsOfLines = new String[1000];
+    public ArrayList<String> read() throws IOException {
+        ArrayList<String> lines = new ArrayList();
         BufferedReader br = new BufferedReader(new FileReader("names.txt"));
         try {
             String line = br.readLine();
-            int i = 0;
             while (line != null) {
                 if (line.length() > 0) {
-                    lotsOfLines[i] = line;
-                    i++;
+                    lines.add(line);
                 }
                 line = br.readLine();
             }
@@ -25,7 +24,7 @@ public class MyFileReader {
         } finally {
             br.close();
         }
-        return lotsOfLines;
+        return lines;
     }
 
 }

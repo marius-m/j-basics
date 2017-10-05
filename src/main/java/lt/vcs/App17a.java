@@ -1,6 +1,7 @@
 package lt.vcs;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * 17a. Tekstiniame faile į kiekvieną eilutę yra surašyti du skaičiai,
@@ -13,10 +14,10 @@ public class App17a {
 
     public static void main(String[] args) throws IOException {
         MyFileReader reader = new MyFileReader();
-        String[] lines = reader.read();
+        ArrayList<String> lines = reader.read();
 
-        for (int i = 0; i < lines.length; i++) {
-            System.out.println("Line: " + lines[i]);
+        for (int i = 0; i < lines.size(); i++) {
+            System.out.println("Line: " + lines.get(i));
         }
     }
 }
