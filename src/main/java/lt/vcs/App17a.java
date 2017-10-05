@@ -26,6 +26,14 @@ public class App17a {
             gases.add(gas1);
         }
 
-        System.out.println("ArrayList: " + gases);
+        double total = 0;
+        for (int i = 0; i < gases.size(); i++) {
+            double calculatedSize = gases.get(i).calculate();
+            System.out.println("Average of one gas: " + calculatedSize);
+            total += calculatedSize;
+        }
+        double average = total / gases.size();
+
+        System.out.println("Average: " + average);
     }
 }

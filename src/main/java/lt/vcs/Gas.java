@@ -9,6 +9,10 @@ public class Gas {
         this.kilometers = Double.parseDouble(kilometers.replace(",", "."));
     }
 
+    public double calculate() {
+        return (liters * 100) / kilometers;
+    }
+
     @Override
     public String toString() {
         return "Gas: " + liters + " / " + kilometers;
