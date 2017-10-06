@@ -5,6 +5,99 @@ public class GameLogic {
     char[] validWord;
     char[] guessWord;
 
+//    String[] hangmanDisplay = {
+//    print('         _____ ')
+//    print('         |   | ')
+//    print('         O   | ')
+//    print('        /|\  | ')
+//    print('        / \  | ')
+//    print('             | ')
+//    print('     ________|_')
+//                return
+//                        if index==1:
+//    print('         _____ ')
+//    print('         |   | ')
+//    print('         O   | ')
+//    print('        /|\  | ')
+//    print('        /    | ')
+//    print('             | ')
+//    print('     ________|_')
+//                return
+//                        if index==2:
+//    print('         _____ ')
+//    print('         |   | ')
+//    print('         O   | ')
+//    print('        /|\  | ')
+//    print('             | ')
+//    print('             | ')
+//    print('     ________|_')
+//                return
+//                        if index==3:
+//    print('         _____ ')
+//    print('         |   | ')
+//    print('         O   | ')
+//    print('        /|   | ')
+//    print('             | ')
+//    print('             | ')
+//    print('     ________|_')
+//                return
+//                        if index==4:
+//    print('         _____ ')
+//    print('         |   | ')
+//    print('         O   | ')
+//    print('         |   | ')
+//    print('             | ')
+//    print('             | ')
+//    print('     ________|_')
+//                return
+//                        if index==5:
+//    print('         _____ ')
+//    print('         |   | ')
+//    print('         O   | ')
+//    print('             | ')
+//    print('             | ')
+//    print('             | ')
+//    print('     ________|_')
+//                return
+//                        if index==6:
+//    print('         _____ ')
+//    print('         |   | ')
+//    print('             | ')
+//    print('             | ')
+//    print('             | ')
+//    print('             | ')
+//    print('     ________|_')
+//                return
+//                        if index==7:
+//    print('         _____ ')
+//    print('             | ')
+//    print('             | ')
+//    print('             | ')
+//    print('             | ')
+//    print('             | ')
+//    print('     ________|_')
+//                return
+//                        if index==8:
+//    print('               ')
+//    print('             | ')
+//    print('             | ')
+//    print('             | ')
+//    print('             | ')
+//    print('             | ')
+//    print('     ________|_')
+//                return
+//                        if index==9:
+//    print('               ')
+//    print('               ')
+//    print('               ')
+//    print('               ')
+//    print('               ')
+//    print('               ')
+//    print('     ________|_')
+//                return
+//
+//    };
+
     public GameLogic(String validWord) {
         this.validWord = new char[validWord.length()];
         this.guessWord = new char[validWord.length()];
