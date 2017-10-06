@@ -12,12 +12,19 @@ public class WordPicker {
 
     public WordPicker(ArrayList<String> lines) {
         this.lines = lines;
+        if (lines.size() == 0) {
+            throw new IllegalStateException("No elements");
+        }
     }
 
-    public String pick() throws IOException {
-        Random rand = new Random();
-        int randomNumber  = rand.nextInt(lines.size()) + 1;
-        return lines.get(randomNumber);
+    public String pick(int i) throws IOException {
+        if (i < 0) {
+            return lines.get(0);
+        }
+        if (i > lines.size()) {
+            return lines.get(lines.size() - 1);
+        }
+        return lines.get(i);
     }
 
     public int randomNumber() {
