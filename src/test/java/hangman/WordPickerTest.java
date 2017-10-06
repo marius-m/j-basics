@@ -45,6 +45,18 @@ public class WordPickerTest extends TestCase {
         assertEquals("Petras", result);
     }
 
+    public void testNameValid2() throws Exception {
+        ArrayList<String> lines = new ArrayList();
+        lines.add("Marius");
+        lines.add("Jonas");
+        lines.add("Petras");
+        WordPicker wordPicker = new WordPicker(lines);
+
+        String result = wordPicker.pick(3);
+
+        assertEquals("Petras", result);
+    }
+
     public void testNameTooHigh() throws Exception {
         ArrayList<String> lines = new ArrayList();
         lines.add("Marius");

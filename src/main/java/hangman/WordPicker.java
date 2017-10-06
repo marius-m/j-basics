@@ -21,7 +21,7 @@ public class WordPicker {
         if (i < 0) {
             return lines.get(0);
         }
-        if (i > lines.size()) {
+        if (i >= lines.size()) {
             return lines.get(lines.size() - 1);
         }
         return lines.get(i);
