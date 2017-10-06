@@ -14,14 +14,14 @@ public class GameLogic {
         }
     }
 
-    public void checkLetter(String letter) {
+    public boolean checkLetter(String letter) {
         if (letter.length() > 1) {
             System.out.println("Dude, only one letter");
-            return;
+            return false;
         }
         if (letter.length() == 0) {
             System.out.println("ONLY ONE LETTER!!!!1");
-            return;
+            return false;
         }
         for (int i = 0; i < validWord.length; i++) {
             char guessLetter = letter.charAt(0);
@@ -29,6 +29,12 @@ public class GameLogic {
                 guessWord[i] = guessLetter;
             }
         }
+        for (int i = 0; i < validWord.length; i++) {
+            if (validWord[i] != guessWord[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void displayLetters() {
