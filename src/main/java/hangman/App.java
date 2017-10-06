@@ -19,13 +19,14 @@ public class App {
         int randomNumber  = rand.nextInt(lines.size()) + 1;
 
         WordPicker wordPicker = new WordPicker(lines);
-        GameLogic gameLogic = new GameLogic(wordPicker.pick(randomNumber));
+//        GameLogic gameLogic = new GameLogic(wordPicker.pick(randomNumber));
+        GameLogic gameLogic = new GameLogic(wordPicker.pick(0));
 
         String inputLetter;
         do {
             inputLetter = scanner.nextLine();
-            gameLogic.displayLetters();
             gameLogic.checkLetter(inputLetter);
+            gameLogic.displayLetters();
         } while (!"exit".equals(inputLetter));
     }
 }
