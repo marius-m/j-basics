@@ -94,16 +94,15 @@ public class GameLogic {
     /**
      * Checks if letter exist
      * @param letter
-     * @return true if *WORD* is guessed correctly
      */
-    public boolean checkLetter(String letter) {
+    public void checkLetter(String letter) {
         if (letter.length() > 1) {
             System.out.println("Dude, only one letter");
-            return false;
+            return;
         }
         if (letter.length() == 0) {
             System.out.println("ONLY ONE LETTER!!!!1");
-            return false;
+            return;
         }
         boolean isLetterFound = false;
         for (int i = 0; i < validWord.length; i++) {
@@ -116,13 +115,18 @@ public class GameLogic {
         if (!isLetterFound) {
             health--;
         }
+    }
 
+    public GameState getGameState() {
+        if (health == 0) {
+            return GameState.LOST;
+        }
         for (int i = 0; i < validWord.length; i++) {
             if (validWord[i] != guessWord[i]) {
-                return false;
+                return GameState.IN_GAME;
             }
         }
-        return true;
+        return GameState.WON;
     }
 
     public void displayHealth() {

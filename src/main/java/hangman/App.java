@@ -23,16 +23,24 @@ public class App {
         GameLogic gameLogic = new GameLogic(wordPicker.pick(0));
 
         String inputLetter;
+        GameState gameState = GameState.UNKNOWN;
         do {
             gameLogic.displayHealth();
             gameLogic.displayGuessedWord();
             System.out.println("Input letter");
             inputLetter = scanner.nextLine();
-            boolean hasWon = gameLogic.checkLetter(inputLetter);
-            if (hasWon) {
-                System.out.println("You have won!");
-                break;
+            gameLogic.checkLetter(inputLetter);
+            gameState = gameLogic.getGameState();
+            switch (gameState) {
+                case IN_GAME:
+                    break;
+                case WON:
+                    System.out.println("You won");
+                    break;
+                case LOST:
+                    System.out.println("You lost");
+                    break;
             }
-        } while (!"exit".equals(inputLetter));
+        } while (!"exit".equals(inputLetter) && gameState == GameState.IN_GAME);
     }
 }
