@@ -19,14 +19,16 @@ public class App {
         int randomNumber  = rand.nextInt(lines.size()) + 1;
 
         WordPicker wordPicker = new WordPicker(lines);
-        GameLogic gameLogic = new GameLogic(wordPicker.pick(randomNumber));
-//        GameLogic gameLogic = new GameLogic(wordPicker.pick(0));
+//        GameLogic gameLogic = new GameLogic(wordPicker.pick(randomNumber));
+        GameLogic gameLogic = new GameLogic(wordPicker.pick(0));
 
         String inputLetter;
         do {
+            gameLogic.displayHealth();
+            gameLogic.displayGuessedWord();
+            System.out.println("Input letter");
             inputLetter = scanner.nextLine();
             boolean hasWon = gameLogic.checkLetter(inputLetter);
-            gameLogic.displayLetters();
             if (hasWon) {
                 System.out.println("You have won!");
                 break;
